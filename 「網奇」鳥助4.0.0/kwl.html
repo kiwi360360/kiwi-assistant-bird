@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kwl(登入面板-研發中)</title>
+    <style>
+        #userLog_in {
+            right: 9px;
+            height: 20px;
+            width: 50px;
+            position: absolute;
+        }
+        #mask {
+            left: 0px;
+            top: 0px;
+            height: 200px;
+            width: 169px;
+            position: absolute;
+            background-color: #00000088;
+            color: #ffffff;
+        }
+        #maskw {
+            line-height: 110px;
+        }
+    </style>
+    <script>
+        cookie.Expires = DataTime.MaxValue
+        function userLog_in() {
+            document.cookie = 'userName=' + document.getElementById('userName').value
+        }
+        // document.body.background=get_cookie("background")
+        // document.body.bgColor=get_cookie("bgColor")
+        function get_cookie(name) {
+        search=name + "="
+        if (document.cookie.length > 0) {
+            offset = document.cookie.indexOf(search)
+            if (offset >= 0) {
+                offset += search.length
+                end = document.cookie.indexOf(";", offset)
+                    if (end == -1) end=document.cookie.length
+                    return unescape(document.cookie.substring(offset, end))
+                    }
+            }
+        return null
+        }
+    </script>
+</head>
+<body>
+    網奇帳號：<input type="text" id="userName">
+    網奇密碼：<input type="password" id="userPassword">
+    -------><button id="userLog_in" onclick="userLog_in()"><a class="slw">登入</a></button>
+    <div id="mask"><center id="maskw">--登入功能研發中--</center></div>
+</body>
+</html>
